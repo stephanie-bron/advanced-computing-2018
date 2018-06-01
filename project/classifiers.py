@@ -54,29 +54,17 @@ def NN():
 
     # This returns a tensor to represent the input
     x = Input(shape=(180,))
-    
-    # a layer instance is callable on a tensor, and returns a tensor
-    h = Dense(10)(x)
-    h = Activation('tanh')(h)
+
+    h = Dense(20)(x)
+    h = Activation('relu')(h)
     h = Dense(10)(h)
-    h = Activation('tanh')(h)
-    h = Dense(6)(h)
-    h = Activation('tanh')(h)
+    h = Activation('relu')(h)
     h = Dense(4)(h)
-    h = Activation('tanh')(h)
-    h = Dense(4)(h)
-    h = Activation('tanh')(h)
+    h = Activation('relu')(h)
     h = Dense(2)(h)
 
-    # h = Dense(10)(x)
-    # h = Activation('relu')(h)
-    # h = Dense(10)(h)
-    # h = Activation('relu')(h)
-    # h = Dense(2)(h)
-
-    # to find out more about activations check the keras documentation
-    #y = Activation('softmax')(h)
-    y = Activation('sigmoid')(h)
+    y = Activation('softmax')(h)
+    #y = Activation('sigmoid')(h)
 
     # Package it all up in a Model
     net = Model(x, y)

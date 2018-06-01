@@ -16,7 +16,6 @@ def makeLC(mu, sigma, amp, tmin, tmax, scaled):
     gaussDict = {}
 
     for counter, value in enumerate(inds):
-        # print gauss[counter], bins[value-1]
         gaussDict[bins[value - 1]] = gauss[counter]
 
     rand = np.random.uniform(tmin, tmax, size=100)
@@ -45,11 +44,9 @@ def makeLC(mu, sigma, amp, tmin, tmax, scaled):
 
     ex1 = 1e7
     ex2 = 5e7
-    exposure = np.random.uniform(ex1, ex2, size=61)
 
     err1 = 1.0
     err2 = 5.0
-    error = np.random.uniform(err1, err2, size=61)
 
     for k in counter_rand_gauss.keys():
         counter_rand_gauss[k].append(float(np.random.uniform(err1, err2, 1)))
